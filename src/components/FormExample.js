@@ -45,9 +45,9 @@ class FormExample extends React.Component {
     }
 
     doQuery() {
-        var query = 'http://13.250.191.185/elixirbeacon/v03/beacon/query?referenceName='
+        var query = 'http://13.250.172.151/elixirbeacon/v03/beacon/query?referenceName='
         var end = '&assemblyId=GRCh38'
-        query = query + this.state.chromosome +'&start=' + this.state.position + '&allele=' + this.state.allele + end
+        query = query + this.state.chromosome +'&start=' + this.state.position + '&alternateBases=' + this.state.allele + end
         axios(query)
         .then(res => {
             console.log(res)
@@ -92,7 +92,7 @@ class FormExample extends React.Component {
             this.doQuery()
         } else {
             this.setState({
-            result: "Yo man, check your input!"
+            result: "Please check your input"
             })
         }
         
